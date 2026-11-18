@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Modifier un événement</title>
+    <title>Gestion des événements</title>
 </head>
 <body>
     <h1>Modifier un événement</h1>
 
-    <form>
-        <p>Nom de l'événement :</p>
-        <input type="text">
+    <p>Nom de l'événement :</p>
+    <input type="text">
 
-        <p>Date :</p>
-        <input type="date">
+    <p>Modifier le lieu :</p>
+    <input type="text" id="lieu">
 
-        <p>Lieu :</p>
-        <input type="text">
+    <p>Statut de l'événement :</p>
+    <select id="statut">
+        <option>Maintenu</option>
+        <option>Annulé</option>
+    </select>
 
-        <p>Artistes :</p>
-        <input type="text">
+    <p>
+        <button onclick="modifier()">Enregistrer</button>
+    </p>
 
-        <p>Événement annulé :</p>
-        <input type="checkbox">
+    <h2>Informations de l'événement</h2>
+    <p id="resultat"></p>
 
-        <p><button>Enregistrer</button></p>
-    </form>
+    <script>
+        function modifier() {
+            let lieu = document.getElementById("lieu").value;
+            let statut = document.getElementById("statut").value;
+
+            document.getElementById("resultat").innerHTML =
+                "Lieu : " + lieu + "<br>Statut : " + statut;
+        }
+    </script>
 </body>
 </html>
